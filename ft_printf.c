@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: makarago <makarago@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 13:10:18 by makarago          #+#    #+#             */
+/*   Updated: 2024/12/29 15:39:31 by makarago         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static void	ft_write(va_list va, char *str, size_t *counter)
@@ -20,9 +32,9 @@ static void	ft_write(va_list va, char *str, size_t *counter)
 		ft_putwbase(va_arg(va, unsigned int), counter, "0123456789abcdef");
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list va;
+	va_list	va;
 	size_t	counter;
 
 	if (!str)
@@ -35,7 +47,8 @@ int		ft_printf(const char *str, ...)
 		{
 			str++;
 			ft_write(va, (char *)str, &counter);
-		}else
+		}
+		else
 			ft_putchar(*str, &counter);
 		str++;
 	}

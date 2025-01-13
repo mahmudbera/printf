@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRCS =	ft_print.c \
+SRCS =	ft_printf.c \
 		ft_putchar.c \
 		ft_putnbr.c \
 		ft_putptr.c \
@@ -19,7 +19,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 all: $(NAME)
-+
+
 clean:
 	$(RM) $(OBJS)
 

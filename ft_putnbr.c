@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: makarago <makarago@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 13:10:26 by makarago          #+#    #+#             */
+/*   Updated: 2024/12/29 13:16:16 by makarago         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_putnbr(int num, size_t *counter)
+void	ft_putnbr(int num, size_t *counter)
 {
 	if (num == -2147483648)
 	{
@@ -21,5 +33,4 @@ void ft_putnbr(int num, size_t *counter)
 		ft_putnbr((num / 10), counter);
 		ft_putnbr((num % 10), counter);
 	}
-	
 }

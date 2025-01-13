@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: makarago <makarago@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 13:10:44 by makarago          #+#    #+#             */
+/*   Updated: 2024/12/29 15:58:11 by makarago         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static size_t ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
-	size_t len;
+	size_t	len;
 
 	if (!str)
 		return (0);
@@ -12,12 +24,12 @@ static size_t ft_strlen(char *str)
 	return (len);
 }
 
-static size_t ft_numlen(unsigned long num, size_t base_len)
+static size_t	ft_numlen(unsigned long num, size_t base_len)
 {
-	size_t len;
+	size_t	len;
 
-	len = 0;
-	while (num > base_len)
+	len = 1;
+	while (num >= base_len)
 	{
 		num /= base_len;
 		len++;
@@ -25,11 +37,11 @@ static size_t ft_numlen(unsigned long num, size_t base_len)
 	return (len);
 }
 
-char *ft_putbase(unsigned long num, char *base)
+char	*ft_putbase(unsigned long num, char *base)
 {
-	size_t num_len;
-	size_t base_len;
-	char   *str;
+	size_t	num_len;
+	size_t	base_len;
+	char	*str;
 
 	base_len = ft_strlen(base);
 	num_len = ft_numlen(num, base_len);
